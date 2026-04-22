@@ -1,0 +1,24 @@
+26.2.0 - 2026-04-22
+- Add polygon drawing function poly() with variadic template parameters
+
+26.1.3 - 2026-04-22
+- Add common color macros (BMP_BLACK, BMP_WHITE, BMP_RED, etc.)
+
+26.1.2 - 2026-04-20
+- Now you can give the function a class "Point"
+
+26.1.1 - 2026-04-20
+- Now when you init a BMP, it will be white, not black
+
+26.1.0 - 2026-04-19
+- Initial official release (version 26.1.0)
+- Implement core framebuffer management with dynamic memory allocation
+- Add putPixel function for basic pixel rendering (with boundary checking)
+- Integrate Bresenham line algorithm for line drawing
+- Add rect function for hollow rectangle rendering
+- Implement midpoint circle algorithm for circ function (hollow circle)
+- Add saveBMP function to export 24-bit RGB BMP image files
+- Encapsulate all functions under BMPDraw namespace for namespace isolation
+- Add complete header guard (BMPDRAW_H) to prevent multiple inclusions
+- Implement Color struct for RGB color management
+- Add clear function to initialize framebuffer with specified color
