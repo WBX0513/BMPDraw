@@ -26,14 +26,35 @@ Include `BMPDraw.h` in your project:
 ```cpp
 #include "BMPDraw.h"
 
+using namespace BMPDraw;
+
 int main() {
-	BMPDraw::BMPDrawer gui(800, 600);
+	BMPDrawer drawer(800, 600);
 	
-	gui.line(50,50, 700,500, BMPDraw::Color(255,0,0));
-	gui.rect(100,100, 200,150, BMPDraw::Color(0,255,0));
-	gui.circ(400, 300, 100, BMPDraw::Color(255, 255, 0));
+	drawer.clear(BMP_WHITE);
 	
-	gui.saveBMP("output.bmp");
+	drawer.line(Point(50, 50), Point(750, 50), BMP_RED);
+	drawer.rect(Point(100, 100), Point(300, 300), BMP_GREEN);
+	drawer.circ(Point(400, 200), 100, BMP_BLUE);
+	
+	drawer.poly(
+		BMP_YELLOW,
+		Point(200, 400),
+		Point(100, 500),
+		Point(300, 500)
+	);
+	
+	drawer.poly(
+		BMP_MAGENTA,
+		Point(500, 350),
+		Point(450, 450),
+		Point(550, 500),
+		Point(650, 450),
+		Point(600, 350)
+	);
+	
+	drawer.saveBMP("output.bmp");
+	
 	return 0;
 }
 ```
